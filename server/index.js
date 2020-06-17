@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api', require('./routers/user'))
 app.use('/api', require('./routers/comment'))
+app.use('/api', require('./routers/reply'))
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}.`)

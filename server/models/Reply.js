@@ -21,4 +21,4 @@ Reply.sync().then(() => {
   console.log('Reply table created');
 });
 
-module.exports = Comment
+module.exports = Reply

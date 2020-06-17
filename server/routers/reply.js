@@ -26,3 +26,5 @@ router.get('/comments/:commentId/replies:', async (req, res) => {
     res.status(500).send();
   }
 })
+
+module.exports = router;
