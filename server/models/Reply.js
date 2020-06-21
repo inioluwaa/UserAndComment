@@ -4,6 +4,10 @@ const db = require('../config/database');
 const Reply = db.define('replies', {
   reply: {
     type: Sequelize.STRING,
+    allowNull: {
+      args: false,
+      msg: 'Please enter a reply'
+    }
   },
   commentId: {
     type: Sequelize.INTEGER,
