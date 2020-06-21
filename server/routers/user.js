@@ -15,6 +15,9 @@ router.get('/users', async (req, res) => {
 router.post('/users/login', async (req, res) => {
   try {
     const user = await User.findOne({ where: { email: req.body.email, password: req.body.password } });
+    if (!user) {
+      res.status(400).send();
+    }
     res.status(201).send(user);
   } catch (e) {
     res.status(400).send();
