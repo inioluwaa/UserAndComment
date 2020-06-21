@@ -48,7 +48,7 @@ User.associate = (models) => {
   });
 };
 
-User.sync({ force: true }).then(() => {
+User.sync().then(() => {
   console.log('table created');
 });
 

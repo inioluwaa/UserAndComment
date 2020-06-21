@@ -6,7 +6,7 @@ const router = new express.Router();
 router.get('/users', async (req, res) => {
   try {
     const users = await User.findAll();
-    res.send(users)
+    res.status(201).send(users)
   } catch (e) {
     res.status(500).send();
   }
@@ -14,8 +14,8 @@ router.get('/users', async (req, res) => {
 
 router.post('/users/login', async (req, res) => {
   try {
-    const user = await User.findOne({ where: { email: req.body.email } });
-    res.send(user);
+    const user = await User.findOne({ where: { email: req.body.email, password: req.body.password } });
+    res.status(201).send(user);
   } catch (e) {
     res.status(400).send();
   }
