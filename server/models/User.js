@@ -33,7 +33,10 @@ const User = db.define('users', {
       msg: 'Please enter a password'
     },
     validate: {
-      min: 6
+      len: {
+        args: [6, 100],
+        msg: 'Password should be more than 6 characters'
+      }
     },
   }
 })
