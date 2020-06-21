@@ -14,9 +14,6 @@ Comment.associate = (models) => {
   Comment.hasMany(models.Reply, {
     foreignKey: 'commentId',
   });
-};
-
-Comment.associate = (models) => {
   Comment.belongsTo(models.User, {
     foreignKey: 'userId',
     onDelete: 'CASCADE'
