@@ -33,11 +33,7 @@ const User = db.define('users', {
       msg: 'Please enter a password'
     },
     validate: {
-      isNotShort: (value) => {
-        if (value.length < 8) {
-          throw new Error('Password should be at least 8 characters');
-        }
-      },
+      min: 6
     },
   }
 })
